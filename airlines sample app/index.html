@@ -44,17 +44,17 @@
                 <div class="info-wrapper-right">
 					<div class="info">
                         <div class="info-data" id="ffnum"></div>
-						<div class="info-label" for="ffnum">Air Miles:</div>
+						<div class="info-label" for="ffnum">Predio:</div>
                         <div class="clear"></div>
 					</div>
 					<div class="info">
                         <div class="info-data" id="miles"></div>
-						<div class="info-label" for="miles">Total Miles:</div>
+						<div class="info-label" for="miles">Apto:</div>
                         <div class="clear"></div>
 					</div>
 					<div class="info">
                         <div class="info-data" id="currentStatus">&nbsp;</div>
-						<div class="info-label" for="currentStatus">Priority:</div>
+						<div class="info-label" for="currentStatus">Status:</div>
                         <div class="clear"></div>
 					</div>
 				</div>
@@ -64,29 +64,44 @@
 			<div data-role="content"> 
 				<ul data-role="listview" id="myTripsView" data-inset="true" data-theme="d">
 					<li>
-						<a href="#myTrips" data-transition="slide">
-							My Trips <span id="numberOfFlights"></span>
+						<a href="#myTripss" data-transition="slide">
+							<img class="ui-li-icon" src="images/icons/envelope_16x11.png" /> Inbox <span id="numberOfFlights"></span>
 						</a>
 					</li>
 				</ul>
 				<ul data-role="listview" id="flightStatusView" data-inset="true" data-theme="d">
 					<li>
-						<a href="#flightStatus" data-transition="slide">Flight Status</a>
+						<a href="#flightStatus" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/calendar_15x16.png" /> Reservas
+                        </a>
 					</li>
 				</ul>
 				<ul data-role="listview" id="bagTrackView" data-inset="true" data-theme="d">
 					<li>
-						<a href="#bagTrack" data-transition="slide">Track your bag</a>
+						<a href="#bagTrack" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/review_16x13.png" /> Portaria
+                        </a>
 					</li>
 				</ul>
 				<ul data-role="listview" id="programProgressView" data-inset="true" data-theme="d">
 					<li>
-						<a href="#programProgress" data-transition="slide">Mileage program progress</a>
+						<a href="#programProgress" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/notebook_14x16.png" /> Cadastros
+                        </a>
 					</li>
 				</ul>
                 <ul data-role="listview" id="settingsView" data-inset="true" data-theme="d">
 					<li>
-						<a href="#settings" data-transition="slide">Settings</a>
+						<a href="#settings" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/fork_spoon_9x16.png" /> Convenios
+                        </a>
+					</li>
+				</ul>
+                <ul data-role="listview" id="newView" data-inset="true" data-theme="d">
+					<li>
+						<a href="#settings" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/home_16x16.png" /> Chegada Segura
+                        </a>
 					</li>
 				</ul>
 			</div>
@@ -111,7 +126,7 @@
 			<div data-role="content">
 				<form id="login">
 					Username:
-					<input type="text" id="userName" value="jaxon.daniels@gmail.com" />
+					<input type="text" id="userName" value="eduardo@smartcondo.com" />
 					Password:
 					<input type="password" id="pwd" value="P2ssw0rd" />
 					<input type="submit" value="Login" />
@@ -294,7 +309,7 @@
 		<!--flightStatus page-->
 		<div id="flightStatus" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Flight Status</h1>
+				<h1>Reservas</h1>
 
 			</div>
 			<div data-role="content">
@@ -307,7 +322,7 @@
 		<!--bagTrack page-->
 		<div id="bagTrack" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Bag Track</h1>
+				<h1>Portaria</h1>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="Ul2" data-inset="true" data-theme="d">
@@ -319,7 +334,7 @@
 		<!--programProgress page-->
 		<div id="programProgress" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Progress</h1>
+				<h1>Cadastro</h1>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="Ul3" data-inset="true" data-theme="d">
@@ -331,7 +346,7 @@
         <!--Settings page-->
 		<div id="settings" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Settings</h1>
+				<h1>Convenio</h1>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="Ul4" data-inset="true" data-theme="d">
