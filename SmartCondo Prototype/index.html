@@ -443,17 +443,101 @@
 			</div>
 		</div>
         
-		<!--bagTrack page-->
+		<div id="portariaNotify" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
+				<h1>Portaria</h1>
+			</div>
+			<div data-role="content">
+                <form>
+    	            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="text-align: center;">
+                         <legend>Tipo de Notificacao:</legend>
+                     	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+                     	<label for="radio-choice-1">Visitante</label>
+
+                     	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+                     	<label for="radio-choice-2">Delivery</label>
+
+                     	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
+                     	<label for="radio-choice-3">Servico</label>
+
+                     	<input type="radio" name="radio-choice" id="radio-choice-4" value="choice-4"  />
+                     	<label for="radio-choice-4">Outro</label>
+                    </fieldset>
+                    <br />
+                    <label>Tempo Estimado em Minutos:</label>
+                    <input type="number" data-clear-btn="false" name="portariaNotifyNumber" id="portariaNotifyNumber" value="" />
+                    <label>Mensagem:</label>
+                    <textarea name="portariaNotifyContent" id="portariaNotifyContent" style="height: 150px;"></textarea>
+                    <button name="portariaNotify-btn" id="portariaNotify-btn" data-icon="forward">Notifica</button>
+                    </form>
+            </div>
+		</div>
+
+		<div id="portariaPanic" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
+				<h1>Portaria</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" id="Ul1" data-inset="true" data-theme="d">
+					<li>Coming Soon!</li>
+				</ul>
+			</div>
+		</div>
+
+        <!--bagTrack page-->
 		<div id="bagTrack" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Portaria</h1>
 			</div>
 			<div data-role="content">
-				<ul data-role="listview" id="Ul2" data-inset="true" data-theme="d">
-					<li>Coming Soon!</li>
+				<ul data-role="listview" id="flightStatusView" data-inset="true" data-theme="d">
+					<li>
+						<a href="#portariaNotify" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/review_16x13.png" /> Notificacao
+                        </a>
+					</li>
+					<li>
+						<a href="#portariaPanic" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/bubble_16x12.png" /> Panico
+                        </a>
+					</li>
 				</ul>
+                <ul id="slideshow" style="list-style-type: none; padding: 0; margin: 0 0 0 -16px;">
+                    <li><img src="images/portaria/portaria1.jpg" style="position:absolute; width: 100%;" class="active" /></li>
+                    <li><img src="images/portaria/portaria2.jpg" style="position:absolute; width: 100%;" /></li>
+                    <li><img src="images/portaria/portaria3.jpg" style="position:absolute; width: 100%;" /></li>
+                </ul>
 			</div>
 		</div>
+        <script>
+            $(function () {
+
+                /* SET PARAMETERS */
+                var change_img_time     = 5000; 
+                var transition_speed    = 100;
+
+                var simple_slideshow    = $("#slideshow"),
+                    listItems           = simple_slideshow.children('li'),
+                    listLen             = listItems.length,
+                    i                   = 0,
+
+                    changeList = function () {
+
+                        listItems.eq(i).fadeOut(transition_speed, function () {
+                            i += 1;
+                            if (i === listLen) {
+                                i = 0;
+                            }
+                            listItems.eq(i).fadeIn(transition_speed);
+                        });
+
+                    };
+
+                listItems.not(':first').hide();
+                setInterval(changeList, change_img_time);
+
+            });
+        </script>
 
 		<!--programProgress page-->
 		<div id="programProgress" data-role="page" data-add-back-btn="true">
