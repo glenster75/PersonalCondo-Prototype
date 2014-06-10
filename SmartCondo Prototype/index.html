@@ -111,13 +111,6 @@
                         </a>
 					</li>
 				</ul>
-                <ul data-role="listview" id="newView" data-inset="true" data-theme="d">
-					<li>
-						<a href="#settings" data-transition="slide">
-                            <img class="ui-li-icon" src="images/icons/home_16x16.png" /> Chegada Segura
-                        </a>
-					</li>
-				</ul>
 			</div>
 		</div>
 
@@ -513,6 +506,26 @@
 			</div>
 		</div>
 
+		<div id="chegada" data-role="page">
+			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
+				<h1>Portaria</h1>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+			</div>
+			<div data-role="content">
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="select-native-1">Acionar:</label>
+                        <select name="select-native-1" id="select-native-1">
+                            <option value="1">Disabilitado</option>
+                            <option value="2">Acione Uma Vez</option>
+                            <option value="3">Permanece Acionado</option>
+                        </select>
+                    </div>
+	                <a data-role="button" href="#" data-rel="back">Acceitar Opcao</a>
+                </form>
+            </div>
+		</div>
+
         <!--bagTrack page-->
 		<div id="bagTrack" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
@@ -521,6 +534,11 @@
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="flightStatusView" data-inset="true" data-theme="d">
+					<li>
+						<a href="#chegada" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/home_16x16.png" /> Chegada Segura
+                        </a>
+					</li>
 					<li>
 						<a href="#portariaNotify" data-transition="slide">
                             <img class="ui-li-icon" src="images/icons/review_16x13.png" /> Notificacao
