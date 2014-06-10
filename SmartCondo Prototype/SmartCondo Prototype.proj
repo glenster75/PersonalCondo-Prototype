@@ -16,7 +16,7 @@
     <iOSDeviceFamily>1</iOSDeviceFamily>
     <iOSBackgroundMode />
     <FrameworkVersion>3.2.0</FrameworkVersion>
-    <CorePlugins>org.apache.cordova.splashscreen;org.apache.cordova.statusbar</CorePlugins>
+    <CorePlugins>org.apache.cordova.camera;org.apache.cordova.device;org.apache.cordova.splashscreen;org.apache.cordova.statusbar</CorePlugins>
     <DisplayName>SmartCondo</DisplayName>
     <WP8SupportedResolutions>ID_RESOLUTION_WVGA;ID_RESOLUTION_WXGA;ID_RESOLUTION_HD720P</WP8SupportedResolutions>
     <WP8ProductID>{163ec050-1adf-4897-b5bf-e6b896dafa1b}</WP8ProductID>
@@ -24,7 +24,7 @@
     <Author>SmartImageSoft</Author>
     <Description>Smart Condo Prototype</Description>
     <WP8Requirements />
-    <WP8Capabilities />
+    <WP8Capabilities>ID_CAP_ISV_CAMERA</WP8Capabilities>
     <WP8TileTitle>SmartCondo</WP8TileTitle>
     <WP8Publisher />
   </PropertyGroup>
