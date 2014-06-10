@@ -25,10 +25,13 @@ airlinesApp.prototype = function() {
         $('#home').on('pagebeforecreate',$.proxy(_initHome,that));
         $('#checkIn').on('pageshow', $.proxy(_initCheckIn,that));
         $("#button_logout").on("click", function () {
-            debugger;
             _login = false;
 	    	$.mobile.changePage("#logon", { transition: "flip" });
             $("#login").show();
+            return false;
+        });
+        $("#reply-btn").on("click", function () {
+	    	$.mobile.changePage("#myTrips", { transition: "flip" });
             return false;
         });
         

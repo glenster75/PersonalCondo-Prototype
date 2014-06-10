@@ -65,7 +65,7 @@
 			<div data-role="content"> 
 				<ul data-role="listview" id="myTripsView" data-inset="true" data-theme="d">
 					<li>
-						<a href="#myTripss" data-transition="slide">
+						<a href="#myTrips" data-transition="slide">
 							<img class="ui-li-icon" src="images/icons/envelope_16x11.png" /> Inbox <span id="numberOfFlights"></span>
 						</a>
 					</li>
@@ -135,8 +135,8 @@
 			</div>
 		</div>
 
-		<!-- tripDetail page -->
-		<div id="tripDetail" data-role="page" data-add-back-btn="true">
+        <!-- tripDetail page -->
+		<div id="tripDetailOld" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Trip Details</h1>
                 <a data-role="button" href="#home" class="ui-btn-right">Home</a>
@@ -297,15 +297,116 @@
 		</div>
 
 		<!--myTrips page-->
-		<div id="myTrips" data-role="page" data-add-back-btn="true">
-			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>My Trips</h1>
+		<div id="myTripsOld" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed" data-tap-toggle="false">
+				<h1>Inbox</h1>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="myTripsListView" data-inset="true" data-theme="d">
 				</ul>
 			</div>
 		</div>
+		<div id="myTrips" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
+				<h1>Inbox</h1>
+			</div>
+			<div data-role="content">
+                <ul data-role="listview" data-inset="true" data-divider-theme="a">
+                    <li data-role="list-divider">Sexta, 10 de Outubro, 2013 <span class="ui-li-count">2</span></li>
+                    <li>
+                        <a href="#messageDetail" data-transition="slide">
+                            <h2>Síndico</h2>
+                            <p class="subject"><strong>Reunião</strong></p>
+                            <p>Vou precisar estar fora do prédio hoje, podemos nos encontrar amanhã em vez?</p>
+                            <p class="ui-li-aside"><strong>18:24</strong></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messageDetail" data-transition="slide">
+                            <h2>Síndico</h2>
+                            <p class="subject"><strong>Novo Segurança</strong></p>
+                            <p>João - o novo guarda - começará hoje. Por favor passe na portaria para ele te conhecer.</p>
+                            <p class="ui-li-aside"><strong>20:17</strong></p>
+                        </a>
+                    </li>
+                    <li data-role="list-divider">Quinta, 9 de Outubro, 2013 <span class="ui-li-count">0</span></li>
+                    <li>
+                        <a href="#messageDetail" data-transition="slide">
+                            <h2>Administradora</h2>
+                            <p class="subject">Estacionamento</p>
+                            <p>Construção do novo estacionamento vai causar sujeira no segundo andar.</p>
+                            <p class="ui-li-aside"><strong>13:47</strong></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messageDetail" data-transition="slide">
+                            <h2>Morador Apto 46</h2>
+                            <p class="subject">Mercado</p>
+                            <p>Oi, minha tia esta aqui e vou ao mercado. Precisa de algo?</p>
+                            <p class="ui-li-aside"><strong>11:27</strong></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messageDetail" data-transition="slide">
+                            <h2>Morador Apto 82</h2>
+                            <p class="subject">Sair Hoje?</p>
+                            <p>Quer ir pegar uma pizza hoje? Tenho um disconto...</p>
+                            <p class="ui-li-aside"><strong>10:43</strong></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+		<div id="messageDetail" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
+				<h1>Mensagem</h1>
+                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+			</div>
+			<div data-role="content">
+                <a href="#actions-popup" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-icon="gear">Acoes...</a>
+                <br />
+                <div class="ui-corner-all" id="email">
+                    <div class="ui-bar ui-bar-a">
+                        <h3>Subject: </h3> <span style="color: #7f7e7e;">Hoje</span>
+                    </div>
+                    <div class="ui-body ui-body-a" style="padding: 20px 20px">
+                        <strong>Presado Residente,</strong>
+                        <p>Sua mensagem aparecera aqui</p>
+                        <br />
+                        <i>-SmartCondo</i>
+                    </div>
+                </div>
+			</div>
+            <div data-role="popup" id="actions-popup" data-theme="b">
+                <ul data-role="listview" dta-inset="true" style="min-width: 210px">
+                    <li data-role="list-divider">Escolha:</li>
+                    <li><a href="#messageReply" class="ui-icon-refresh">Reply</a></li>
+                    <li><a href="#myTrips"  data-transition="slide" class="ui-icon-delete">Delete</a></li>
+                </ul>
+            </div>
+		</div>
+
+		<div id="messageReply" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
+				<h1>Reply</h1>
+                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+			</div>
+			<div data-role="content">
+                <div class="ui-corner-all" id="emailSendMessage">
+                    <form>
+                        <label>Email:</label>
+                        <input type="email" data-clear-btn="false" name="emailAddress" id="emailAddress" value="" />
+                        <label>Subject:</label>
+                        <input type="text" name="emailSubject" id="emailSubject" value="" />
+                        <label>Body:</label>
+                        <textarea name="mailContent" id="mailContent"></textarea>
+                        <button name="reply-btn" id="reply-btn" data-icon="forward">Reply</button>
+                    </form>
+                </div>
+			</div>
+		</div>
+
 
 		<!--flightStatus page-->
 		<div id="flightStatus" data-role="page" data-add-back-btn="true">
