@@ -39,6 +39,10 @@ airlinesApp.prototype = function() {
 	    	$.mobile.changePage("#myTrips", { transition: "flip" });
             return false;
         });
+        $("#portariaNotify-btn").on("click", function () {
+	    	$.mobile.changePage("#bagTrack", { transition: "flip" });
+            return false;
+        });
         
         $('#myTripsListView').on('click', 'li', function () {
         	var item = $(this);
