@@ -7,6 +7,8 @@ function onDeviceReady() {
     setTimeout(function() {
         navigator.splashscreen.hide();
     }, 4000);
+	cameraApp = new cameraApp();
+    cameraApp.run();
 }
 
 var airlinesApp = function(){}
@@ -17,16 +19,11 @@ airlinesApp.prototype = function() {
     _ffNum = null, 
     _customerData = null,
     _login = false,
-    _pictureSource = null,
-    _destinationType = null,
     
     run = function(){
         var that = this,
         $seatPicker=$('#seatPicker');
 
-        that._pictureSource = navigator.camera.PictureSourceType;
-	    that._destinationType = navigator.camera.DestinationType;
-        
         $('#tripDetail').on('pagebeforeshow',$.proxy(_initTripDetail,that));
         $('#boardingPass').on('pageshow',$.proxy(_initBoardingPass,that));
         $('#home').on('pagebeforecreate',$.proxy(_initHome,that));
@@ -66,75 +63,7 @@ airlinesApp.prototype = function() {
         $seatPicker.on('pagebeforehide', function (event) {
         	_flightForCheckin.segments[_flightForCheckin.currentSegment].seat = seatMapDrawing.getselectedSeat();
         });
-        
-	    $("#capturePhotoButton").on("click", function(){
-            that._capturePhoto.apply(that,arguments);
-        });
-	    $("#getPhotoFromLibraryButton").on("click", function(){
-            that._getPhotoFromLibrary.apply(that,arguments)
-        });
     },
-
-    _capturePhoto = function() {
-        var that = this;
-        
-        // Take picture using device camera and retrieve image as base64-encoded string.
-        navigator.camera.getPicture(function(){
-            that._onPhotoDataSuccess.apply(that,arguments);
-        },function(){
-            that._onFail.apply(that,arguments);
-        },{
-            quality: 50,
-            destinationType: that._destinationType.DATA_URL
-        });
-    },
-
-    _getPhotoFromLibrary = function() {
-        var that= this;
-        // On Android devices, pictureSource.PHOTOLIBRARY and
-        // pictureSource.SAVEDPHOTOALBUM display the same photo album.
-        that._getPhoto(that._pictureSource.PHOTOLIBRARY);         
-    },
-
-    _getPhotoFromAlbum = function() {
-        var that= this;
-        that._getPhoto(that._pictureSource.SAVEDPHOTOALBUM)
-    },
-
-    _getPhoto = function(source) {
-        var that = this;
-        // Retrieve image file location from specified source.
-        navigator.camera.getPicture(function(){
-            that._onPhotoURISuccess.apply(that,arguments);
-        }, function(){
-            airlinesApp._onFail.apply(that,arguments);
-        }, {
-            quality: 50,
-            destinationType: airlinesApp._destinationType.FILE_URI,
-            sourceType: source
-        });
-    },
-
-    _onPhotoDataSuccess = function(imageData) {
-        var smallImage = document.getElementById('smallImage');
-        smallImage.style.display = 'block';
-    
-        // Show the captured photo.
-        smallImage.src = "data:image/jpeg;base64," + imageData;
-    },
-    
-    _onPhotoURISuccess = function(imageURI) {
-        var smallImage = document.getElementById('smallImage');
-        smallImage.style.display = 'block';
-         
-        // Show the captured photo.
-        smallImage.src = imageURI;
-    },
-    
-    _onFail = function(message) {
-        alert(message);
-    },
-
     _initTripDetail = function(){
         var seg = _flightForDetails.segments[0];
 	    $('#tripDetail-title').text(seg.from + ' to ' + seg.to);
