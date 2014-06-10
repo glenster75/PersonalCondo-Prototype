@@ -9,17 +9,21 @@ cameraApp.prototype={
         var that=this;
 	    that._pictureSource = navigator.camera.PictureSourceType;
 	    that._destinationType = navigator.camera.DestinationType;
-	    id("capturePhotoButton").addEventListener("click", function(){
+	    $("#capturePhotoButton").on("click", function(){
             that._capturePhoto.apply(that,arguments);
+            return false;
         });
-	    id("capturePhotoEditButton").addEventListener("click", function(){
-            that._capturePhotoEdit.apply(that,arguments)
+	    $("#capturePhotoEditButton").on("click", function(){
+            that._capturePhotoEdit.apply(that,arguments);
+            return false;
         });
-	    id("getPhotoFromLibraryButton").addEventListener("click", function(){
-            that._getPhotoFromLibrary.apply(that,arguments)
+	    $("#getPhotoFromLibraryButton").on("click", function(){
+            that._getPhotoFromLibrary.apply(that,arguments);
+            return false;
         });
-	    id("getPhotoFromAlbumButton").addEventListener("click", function(){
+	    $("#getPhotoFromAlbumButton").on("click", function(){
             that._getPhotoFromAlbum.apply(that,arguments);
+            return false;
         });
     },
     
@@ -80,15 +84,15 @@ cameraApp.prototype={
     },
     
     _onPhotoDataSuccess: function(imageData) {
-        var smallImage = document.getElementById('smallImage');
-        smallImage.style.display = 'block';
-    
-        // Show the captured photo.
-        smallImage.src = "data:image/jpeg;base64," + imageData;
+        var smallImage = $('.smallImage');
+        $.each(smallImage, function (index, value) {
+            value.style.display = 'block';
+            value.src = "data:image/jpeg;base64," + imageData;
+        });
     },
     
     _onPhotoURISuccess: function(imageURI) {
-        var smallImage = document.getElementById('smallImage');
+        var smallImage = $('#smallImage');
         smallImage.style.display = 'block';
          
         // Show the captured photo.

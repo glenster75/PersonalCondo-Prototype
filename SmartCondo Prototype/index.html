@@ -14,6 +14,9 @@
                 padding-left: 3px;
                 padding-right: 3px;
             }
+            input.ui-slider-input {
+            	display : none !important;
+            }        
         </style>
 		<script src="cordova.js" type="text/javascript"></script>
 		<script src="jquery-mobile/jquery.min.js" type="text/javascript"></script>
@@ -573,23 +576,236 @@
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
 			</div>
 			<div data-role="content">
-				<ul data-role="listview" id="Ul1" data-inset="true" data-theme="d">
-					<li>Coming Soon!</li>
-				</ul>
-                <button class="button dh" id="capturePhotoButton">Take Photo</button>
-                <button class="button dh" id="getPhotoFromLibraryButton">Select from Photo Library</button>
+                <form>
+                    <div data-role="fieldcontain">
+                        <h2>Informacao Obrigatoria</h2>
+                    	<label for="pessoaNome">Nome:</label>
+                    	<input type="text" name="pessoaNome" id="pessoaNome" value="" placeholder="Nome"/>
+                        <label for="pessoaSexo">Sexo:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="pessoaSexo" id="pessoaSexo-1" value="choice-1" checked="checked" />
+                            <label for="pessoaSexo-1">Masculino</label>
+                            <input type="radio" name="pessoaSexo" id="pessoaSexo-2" value="choice-2"  />
+                            <label for="pessoaSexo-2">Feminino</label>
+                        </fieldset>
+                    	<label>Foto:</label>
+			            <img style="display:none;margin:5px auto; width:120px; height:120px;" class="smallImage" src="" />
+                        <button class="button" id="capturePhotoButton">Camera</button>
+                        <button class="button" id="getPhotoFromLibraryButton">Album</button>
+                        <label for="pessoaStatus">Status:</label>
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <input type="radio" name="pessoaStatus" id="pessoaStatus-1" value="choice-1" checked="checked" />
+                            <label for="pessoaStatus-1">Morador</label>
+                            <input type="radio" name="pessoaStatus" id="pessoaStatus-2" value="choice-2"  />
+                            <label for="pessoaStatus-2">Funcionario</label>
+                            <input type="radio" name="pessoaStatus" id="pessoaStatus-3" value="choice-3" />
+                            <label for="pessoaStatus-3">Outro</label>
+                        </fieldset>
+                        <label for="pessoaResponsavel">Responsavel:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="pessoaResponsavel" id="pessoaResponsavel-1" value="choice-1" checked="checked" />
+                            <label for="pessoaResponsavel-1">Sim</label>
+                            <input type="radio" name="pessoaResponsavel" id="pessoaResponsavel-2" value="choice-2"  />
+                            <label for="pessoaResponsavel-2">Nao</label>
+                        </fieldset>
+                        <br />
+                        <hr />
+                        <h2>Informacao Opcional</h2>
+                    	<label for="pessoaParent">Parentesco/Funcao:</label>
+                    	<input type="text" name="pessoaParent" id="pessoaParent" value="" placeholder="Parentesco/Funcao"/>
+                    	<label for="pessoaNascimento">Data Nascimento:</label>
+                    	<input type="date" name="pessoaNascimento" id="pessoaNascimento" value="" placeholder="dd/mm/aaaa"/>
+                    	<label for="pessoaId">Documento Identidade:</label>
+                    	<input type="text" name="pessoaId" id="pessoaId" value="" placeholder="Documento Identidade"/>
+                    	<label for="pessoaTel">Telephone:</label>
+                    	<input type="text" name="pessoaTel" id="pessoaTel" value="" placeholder="Telephone"/>
+                    	<label for="pessoaEmail">Email:</label>
+                    	<input type="text" name="pessoaEmail" id="pessoaEmail" value="" placeholder="Email"/>
+                        <br />
+                        <hr />
+                        <h2>Permissoes</h2>
+                        <label for="slider-1">Pessoas:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-1" id="slider-1-1" value="choice-1" checked="checked" />
+                            <label for="slider-1-1">Nada</label>
+                            <input type="radio" name="slider-1" id="slider-1-2" value="choice-2"  />
+                            <label for="slider-1-2">Ver</label>
+                            <input type="radio" name="slider-1" id="slider-1-3" value="choice-3"  />
+                            <label for="slider-1-3">Editar</label>
+                        </fieldset>
+                        <label for="slider-2">Veiculos:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-2" id="slider-2-1" value="choice-1" checked="checked" />
+                            <label for="slider-2-1">Nada</label>
+                            <input type="radio" name="slider-2" id="slider-2-2" value="choice-2"  />
+                            <label for="slider-2-2">Ver</label>
+                            <input type="radio" name="slider-2" id="slider-2-3" value="choice-3"  />
+                            <label for="slider-2-3">Editar</label>
+                        </fieldset>
+                        <label for="slider-3">Reservas:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-3" id="slider-3-1" value="choice-1" checked="checked" />
+                            <label for="slider-3-1">Nada</label>
+                            <input type="radio" name="slider-3" id="slider-3-2" value="choice-2"  />
+                            <label for="slider-3-2">Ver</label>
+                            <input type="radio" name="slider-3" id="slider-3-3" value="choice-3"  />
+                            <label for="slider-3-3">Editar</label>
+                        </fieldset>
+                        <label for="slider-4">Classificados:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-4" id="slider-4-1" value="choice-1" checked="checked" />
+                            <label for="slider-4-1">Nada</label>
+                            <input type="radio" name="slider-4" id="slider-4-2" value="choice-2"  />
+                            <label for="slider-4-2">Ver</label>
+                            <input type="radio" name="slider-4" id="slider-4-3" value="choice-3"  />
+                            <label for="slider-4-3">Editar</label>
+                        </fieldset>
+
+                        <label for="slider-5">Notificar Portaria:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-5" id="slider-5-1" value="choice-1" checked="checked" />
+                            <label for="slider-5-1">Sim</label>
+                            <input type="radio" name="slider-5" id="slider-5-2" value="choice-2"  />
+                            <label for="slider-5-2">Nao</label>
+                        </fieldset>
+                        <label for="slider-6">Panico:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-6" id="slider-6-1" value="choice-1" checked="checked" />
+                            <label for="slider-6-1">Sim</label>
+                            <input type="radio" name="slider-6" id="slider-6-2" value="choice-2"  />
+                            <label for="slider-6-2">Nao</label>
+                        </fieldset>
+                        <label for="slider-7">Chegada Segura:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-7" id="slider-7-1" value="choice-1" checked="checked" />
+                            <label for="slider-7-1">Sim</label>
+                            <input type="radio" name="slider-7" id="slider-7-2" value="choice-2"  />
+                            <label for="slider-7-2">Nao</label>
+                        </fieldset>
+                    </div>
+                </form>
 			</div>
 		</div>
 
 		<div id="cadastroCarro" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Cadastro Carro</h1>
+				<h1>Cadastro Vehiculo</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
 			</div>
 			<div data-role="content">
-				<ul data-role="listview" id="Ul1" data-inset="true" data-theme="d">
-					<li>Coming Soon!</li>
-				</ul>
+                <form>
+                    <div data-role="fieldcontain">
+                        <label for="vehiculoTipo">Tipo:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="vehiculoTipo" id="vehiculoTipo-1" value="choice-1" checked="checked" />
+                            <label for="vehiculoTipo-1">Carro</label>
+                            <input type="radio" name="vehiculoTipo" id="vehiculoTipo-2" value="choice-2"  />
+                            <label for="vehiculoTipo-2">Moto</label>
+                        </fieldset>
+                    	<label for="vehiculoMarca">Marca:</label>
+                    	<input type="text" name="vehiculoMarca" id="vehiculoMarca" value="" placeholder="Marca"/>
+                    	<label for="vehiculoModelo">Modelo:</label>
+                    	<input type="text" name="vehiculoModelo" id="vehiculoModelo" value="" placeholder="Modelo"/>
+                    	<label for="vehiculoCor">Cor:</label>
+                    	<input type="text" name="vehiculoCor" id="vehiculoCor" value="" placeholder="Cor"/>
+                    	<label for="pessoaEmail">Placa:</label>
+                    	<input type="text" name="vehiculoPlaca" id="vehiculoPlaca" value="" placeholder="Placa"/>
+                        <label>Foto:</label>
+			            <img style="display:none;margin:5px auto; width:120px; height:120px;" class="smallImage" src="" />
+                        <button class="button" id="capturePhotoButton">Camera</button>
+                        <button class="button" id="getPhotoFromLibraryButton">Album</button>
+                        <label for="pessoaStatus">Status:</label>
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <input type="radio" name="pessoaStatus" id="pessoaStatus-1" value="choice-1" checked="checked" />
+                            <label for="pessoaStatus-1">Morador</label>
+                            <input type="radio" name="pessoaStatus" id="pessoaStatus-2" value="choice-2"  />
+                            <label for="pessoaStatus-2">Funcionario</label>
+                            <input type="radio" name="pessoaStatus" id="pessoaStatus-3" value="choice-3" />
+                            <label for="pessoaStatus-3">Outro</label>
+                        </fieldset>
+                        <label for="pessoaResponsavel">Responsavel:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="pessoaResponsavel" id="pessoaResponsavel-1" value="choice-1" checked="checked" />
+                            <label for="pessoaResponsavel-1">Sim</label>
+                            <input type="radio" name="pessoaResponsavel" id="pessoaResponsavel-2" value="choice-2"  />
+                            <label for="pessoaResponsavel-2">Nao</label>
+                        </fieldset>
+                        <br />
+                        <hr />
+                        <h2>Informacao Opcional</h2>
+                    	<label for="pessoaParent">Parentesco/Funcao:</label>
+                    	<input type="text" name="pessoaParent" id="pessoaParent" value="" placeholder="Parentesco/Funcao"/>
+                    	<label for="pessoaNascimento">Data Nascimento:</label>
+                    	<input type="date" name="pessoaNascimento" id="pessoaNascimento" value="" placeholder="dd/mm/aaaa"/>
+                    	<label for="pessoaId">Documento Identidade:</label>
+                    	<input type="text" name="pessoaId" id="pessoaId" value="" placeholder="Documento Identidade"/>
+                    	<label for="pessoaTel">Telephone:</label>
+                    	<input type="number" name="pessoaTel" id="pessoaTel" value="" placeholder="Telephone"/>
+                    	<label for="pessoaEmail">Email:</label>
+                    	<input type="text" name="pessoaEmail" id="pessoaEmail" value="" placeholder="Email"/>
+                        <br />
+                        <hr />
+                        <h2>Permissoes</h2>
+                        <label for="slider-1">Pessoas:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-1" id="slider-1-1" value="choice-1" checked="checked" />
+                            <label for="slider-1-1">Nada</label>
+                            <input type="radio" name="slider-1" id="slider-1-2" value="choice-2"  />
+                            <label for="slider-1-2">Ver</label>
+                            <input type="radio" name="slider-1" id="slider-1-3" value="choice-3"  />
+                            <label for="slider-1-3">Editar</label>
+                        </fieldset>
+                        <label for="slider-2">Veiculos:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-2" id="slider-2-1" value="choice-1" checked="checked" />
+                            <label for="slider-2-1">Nada</label>
+                            <input type="radio" name="slider-2" id="slider-2-2" value="choice-2"  />
+                            <label for="slider-2-2">Ver</label>
+                            <input type="radio" name="slider-2" id="slider-2-3" value="choice-3"  />
+                            <label for="slider-2-3">Editar</label>
+                        </fieldset>
+                        <label for="slider-3">Reservas:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-3" id="slider-3-1" value="choice-1" checked="checked" />
+                            <label for="slider-3-1">Nada</label>
+                            <input type="radio" name="slider-3" id="slider-3-2" value="choice-2"  />
+                            <label for="slider-3-2">Ver</label>
+                            <input type="radio" name="slider-3" id="slider-3-3" value="choice-3"  />
+                            <label for="slider-3-3">Editar</label>
+                        </fieldset>
+                        <label for="slider-4">Classificados:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-4" id="slider-4-1" value="choice-1" checked="checked" />
+                            <label for="slider-4-1">Nada</label>
+                            <input type="radio" name="slider-4" id="slider-4-2" value="choice-2"  />
+                            <label for="slider-4-2">Ver</label>
+                            <input type="radio" name="slider-4" id="slider-4-3" value="choice-3"  />
+                            <label for="slider-4-3">Editar</label>
+                        </fieldset>
+
+                        <label for="slider-5">Notificar Portaria:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-5" id="slider-5-1" value="choice-1" checked="checked" />
+                            <label for="slider-5-1">Sim</label>
+                            <input type="radio" name="slider-5" id="slider-5-2" value="choice-2"  />
+                            <label for="slider-5-2">Nao</label>
+                        </fieldset>
+                        <label for="slider-6">Panico:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-6" id="slider-6-1" value="choice-1" checked="checked" />
+                            <label for="slider-6-1">Sim</label>
+                            <input type="radio" name="slider-6" id="slider-6-2" value="choice-2"  />
+                            <label for="slider-6-2">Nao</label>
+                        </fieldset>
+                        <label for="slider-7">Chegada Segura:</label>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="slider-7" id="slider-7-1" value="choice-1" checked="checked" />
+                            <label for="slider-7-1">Sim</label>
+                            <input type="radio" name="slider-7" id="slider-7-2" value="choice-2"  />
+                            <label for="slider-7-2">Nao</label>
+                        </fieldset>
+                    </div>
+                </form>
 			</div>
 		</div>
         
@@ -603,7 +819,7 @@
                     <div data-role="navbar">
                         <ul>
                             <li><a href="#one" data-ajax="false" class="ui-btn-active">Moradores</a></li>
-                            <li><a href="#two" data-ajax="false">Carros</a></li>
+                            <li><a href="#two" data-ajax="false">Vehiculo</a></li>
                         </ul>
                     </div>
                     <div id="one">
@@ -621,7 +837,7 @@
                             <li><a href="#cadastroCarro">Cadillac</a></li>
                             <li><a href="#cadastroCarro">Ferrari</a></li>
                         </ul>
-		                <a href="#cadastroCarro" data-role="button" data-icon="plus">Addicionar Carro</a>
+		                <a href="#cadastroCarro" data-role="button" data-icon="plus">Addicionar Vehiculo</a>
                     </div>
                 </div>
             </div>
