@@ -1,4 +1,3 @@
-
 // Wait for Apache Cordova to load
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -9,6 +8,8 @@ function onDeviceReady() {
     }, 4000);
 	cameraApp = new cameraApp();
     cameraApp.run();
+    geolocationApp = new geolocationApp();
+	geolocationApp.run();
 }
 
 var airlinesApp = function(){}
