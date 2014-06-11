@@ -5,7 +5,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     setTimeout(function() {
         navigator.splashscreen.hide();
-    }, 4000);
+    }, 8000);
+	feedback.initialize('6dc88a40-f100-11e3-804d-756042b1e0df');
 	cameraApp = new cameraApp();
     cameraApp.run();
     geolocationApp = new geolocationApp();
