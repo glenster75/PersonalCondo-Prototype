@@ -32,7 +32,8 @@ airlinesApp.prototype = function() {
         $('#checkIn').on('pageshow', $.proxy(_initCheckIn,that));
         $("#button_logout").on("click", function () {
             _login = false;
-	    	$.mobile.changePage("#logon", { transition: "flip" });
+	    	$.mobile.changePage("#splashScreen", { transition: "flip" });
+	    	//$.mobile.changePage("#logon", { transition: "flip" });
             $("#login").show();
             return false;
         });
