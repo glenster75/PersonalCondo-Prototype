@@ -128,7 +128,7 @@ airlinesApp.prototype = function() {
 		$('#ffnum').text(data.ffNum);
 		$('#currentStatus').text(data.status);
 		$('#miles').text(data.miles);
-		$('#numberOfFlights').text(data.flights.length);
+		$('#numberOfFlights').text("2");
 		for (var i in data.flights) {
 			var flight = data.flights[i],
             currentSegment = flight.segments[flight.currentSegment];
