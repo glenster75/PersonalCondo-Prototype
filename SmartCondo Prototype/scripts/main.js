@@ -5,7 +5,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     setTimeout(function() {
         navigator.splashscreen.hide();
-    }, 10000);
+    }, 1000);
 	feedback.initialize('6dc88a40-f100-11e3-804d-756042b1e0df');
 	cameraApp = new cameraApp();
     cameraApp.run();
@@ -94,7 +94,10 @@ airlinesApp.prototype = function() {
     
     _initHome = function(){
         if (!_login) {
-	    	$.mobile.changePage("#logon", { transition: "flip" });
+	    	$.mobile.changePage("#splashScreen");
+            setTimeout(function() {
+		    	$.mobile.changePage("#logon", { transition: "flip" });
+            }, 10000);
 	    	$('#login').submit(function () {
 	    		$(this).hide();
 	    		_login = true;
