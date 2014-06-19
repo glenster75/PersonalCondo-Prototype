@@ -62,7 +62,7 @@
                 <div class="info-wrapper-right">
 					<div class="info">
                         <div class="info-data" id="ffnum"></div>
-						<div class="info-label" for="ffnum">Prédio:</div>
+						<div class="info-label" for="ffnum">Condomínio:</div>
                         <div class="clear"></div>
 					</div>
 					<div class="info">
@@ -80,6 +80,13 @@
             </div>
            
 			<div data-role="content"> 
+                <ul data-role="listview" id="chegadaSeguraView" data-inset="true" data-theme="d">
+					<li>
+						<a href="#chegada" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/home_16x16.png" /> Chegada Segura
+                        </a>
+					</li>
+				</ul>
 				<ul data-role="listview" id="myTripsView" data-inset="true" data-theme="d">
 					<li>
 						<a href="#myTrips" data-transition="slide">
@@ -115,6 +122,13 @@
                         </a>
 					</li>
 				</ul>
+                <ul data-role="listview" id="panicoView" data-inset="true" data-theme="d">
+					<li>
+						<a href="#portariaPanic" data-transition="slide">
+                            <img class="ui-li-icon" src="images/icons/bubble_16x12.png" /> Pânico
+                        </a>
+					</li>
+				</ul>
 			</div>
 		</div>
 
@@ -146,13 +160,51 @@
                     <img src="images/predios.png" style="width: 100%;" />
                 </div>
 			</div>
+			<div data-role="footer" data-position="fixed"  data-tap-toggle="false">
+				<div>SmartCondo Version </div>
+			</div>
 		</div>
+<!--
+<footer class="footer">
+	<div>Cordova Plugins Samples</div> 
+</footer>
+/*footer*/
+.footer
+{
+    position:fixed;
+	bottom: 0px;
+    left:0px;
+    width:100%;
+    height: 24px;
+	background:#5f626a;
+    border-top:1px solid #42444a;
+    box-shadow: inset 0px 1px 7px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0px 1px 7px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 1px 7px 0px rgba(0,0,0,0.5);
+}
+.footer:before
+{
+	content: url(img/logo.png);
+	position: relative;
+	left: 12px;
+    top:2px;
+}
 
+.footer div
+{
+	position:absolute;
+    right:12px;
+    top:4px;;
+	color: #afb1b5;
+    font-size:14px;
+}
+-->
+        
         <!-- tripDetail page -->
 		<div id="tripDetailOld" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Trip Details</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
                 <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
@@ -221,7 +273,7 @@
 		<div id="boardingPass" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Boarding Pass</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 				<a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
@@ -280,7 +332,7 @@
 		<div id="checkIn" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Check In</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
                 <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
@@ -316,7 +368,7 @@
 		<div id="myTripsOld" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>Mensagens</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="myTripsListView" data-inset="true" data-theme="d">
@@ -388,7 +440,7 @@
 		<div id="messageDetail" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Mensagem</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
                 <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
@@ -420,17 +472,17 @@
 		<div id="messageReply" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Resposta</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
                 <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <div class="ui-corner-all" id="emailReplyMessage">
                     <form>
-                        <label>Email:</label>
+                        <label>Para:</label>
                         <input type="email" data-clear-btn="false" name="emailAddress" id="emailAddress" value="" />
                         <label>Assunto:</label>
                         <input type="text" name="emailSubject" id="emailSubject" value="" />
-                        <label>Body:</label>
+                        <label>Mensagem:</label>
                         <textarea name="mailContent" id="mailContent" style="height: 150px;"></textarea>
                         <button name="reply-btn" id="reply-btn" data-icon="forward">Responder</button>
                     </form>
@@ -441,19 +493,19 @@
 		<div id="messageSend" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Mail</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
                 <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <div class="ui-corner-all" id="emailSendMessage">
                     <form>
-                        <label>Email:</label>
+                        <label>Para:</label>
                         <input type="email" data-clear-btn="false" name="emailAddressSend" id="emailAddressSend" value="" />
                         <label>Assunto:</label>
                         <input type="text" name="emailSubjectSend" id="emailSubjectSend" value="" />
-                        <label>Body:</label>
+                        <label>Mensagem:</label>
                         <textarea name="mailContentSend" id="mailContentSend" style="height: 150px;"></textarea>
-                        <button name="send-btn" id="send-btn" data-icon="forward">Send</button>
+                        <button name="send-btn" id="send-btn" data-icon="forward">Mandar</button>
                     </form>
                 </div>
 			</div>
@@ -461,7 +513,7 @@
 
 		<div id="splashScreen" data-role="page">
 			<div data-role="content" style="padding: 0;">
-                <a href="#logon"><img src="images/Default-568h@2x.png" style="width: 100%;" /></a>
+                <a href="#logon" onclick="alreadyLoggedIn = true;"><img src="images/Default-568h@2x.png" style="width: 100%;" /></a>
 			</div>
 		</div>
 
@@ -484,7 +536,7 @@
 		<div id="criarReserva" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Criar Reserva</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
                 <a data-role="button" href="#" class="ui-btn-right" data-rel="back">Enviar</a>
 			</div>
 			<div data-role="content">
@@ -552,7 +604,7 @@
         <div id="calendarDetails" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Reservas</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
                 <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
@@ -564,7 +616,7 @@
 		<div id="portariaNotify" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Portaria</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
                 <form>
@@ -592,18 +644,18 @@
 
 		<div id="portariaPanic" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Portaria</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+				<h1>Pânico</h1>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
-                <a href="#bagTrack" data-role="button" style="background: red; color: white;">Acionar Pânico</a>
+                <a href="#bagTrack" data-role="button" style="background: red; color: white;">Acionar Modo Pânico</a>
 			</div>
 		</div>
 
 		<div id="chegada" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Portaria</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+				<h1>Chegada Segura</h1>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
                 <form>
@@ -645,18 +697,8 @@
 			<div data-role="content">
 				<ul data-role="listview" id="flightStatusView" data-inset="true" data-theme="d">
 					<li>
-						<a href="#chegada" data-transition="slide">
-                            <img class="ui-li-icon" src="images/icons/home_16x16.png" /> Chegada Segura
-                        </a>
-					</li>
-					<li>
 						<a href="#portariaNotify" data-transition="slide">
                             <img class="ui-li-icon" src="images/icons/review_16x13.png" /> Notificação
-                        </a>
-					</li>
-					<li>
-						<a href="#portariaPanic" data-transition="slide">
-                            <img class="ui-li-icon" src="images/icons/bubble_16x12.png" /> Pânico
                         </a>
 					</li>
 				</ul>
@@ -701,7 +743,7 @@
 		<div id="cadastroPessoa" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Cadastro Pessoa</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
                 <form>
@@ -818,7 +860,7 @@
 		<div id="cadastroCarro" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Cadastro Veículo</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
                 <form>
@@ -900,7 +942,7 @@
 		<div id="convenioDetail" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>Convênios</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
                 <ul data-role="listview" data-inset="true" data-divider-theme="a">
@@ -925,7 +967,7 @@
 		<div id="convenioItem" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>Convênios</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Voltar</a>
 			</div>
 			<div data-role="content">
                 <ul data-role="listview" data-inset="true" data-divider-theme="a">

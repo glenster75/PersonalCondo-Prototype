@@ -1,10 +1,40 @@
 // Wait for Apache Cordova to load
 document.addEventListener("deviceready", onDeviceReady, false);
 
+var alreadyLoggedIn = false;
+var deviceInfo = new function() {
+	this.model = "";
+	this.cordova = "";
+	this.platform = "";
+	this.uuid = "";
+	this.version = "";
+    this.networkState = "";
+    this.lastNetworkCheck = "";
+};
+
 // PhoneGap is ready
 function onDeviceReady() {
     setTimeout(function() {
         navigator.splashscreen.hide();
+        deviceInfo.model = device.model;
+		deviceInfo.cordova = device.cordova;
+		deviceInfo.platform = device.platform;
+		deviceInfo.uuid = device.uuid;
+		deviceInfo.version = device.version;
+        
+        // TODO: Add timer:
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
+
+            deviceInfo.networkState = states[navigator.connection.type];
+            deviceInfo.lastNetworkCheck = new Date().toLocaleTimeString().split(" ")[0];
     }, 1000);
 	feedback.initialize('6dc88a40-f100-11e3-804d-756042b1e0df');
 	cameraApp = new cameraApp();
@@ -21,7 +51,7 @@ airlinesApp.prototype = function() {
     _ffNum = null, 
     _customerData = null,
     _login = false,
-    
+
     run = function(){
         var that = this,
         $seatPicker=$('#seatPicker');
@@ -46,6 +76,21 @@ airlinesApp.prototype = function() {
             return false;
         });
         $("#portariaNotify-btn").on("click", function () {
+            navigator.notification.alert('Notificação para portaria enviada',
+									 function() {
+                                        setTimeout(function () {
+                                            navigator.notification.beep(2);
+                                            navigator.notification.vibrate(3000);
+                                            navigator.notification.alert('Portaria leu notificação',
+                                									 null,
+                                									 'Portaria', 
+                                									 'OK'     
+                                			);
+                                        }, 3000);
+                                     },
+									 'Portaria', 
+									 'OK'     
+			);
 	    	$.mobile.changePage("#bagTrack", { transition: "flip" });
             return false;
         });
@@ -96,7 +141,9 @@ airlinesApp.prototype = function() {
         if (!_login) {
 	    	$.mobile.changePage("#splashScreen");
             setTimeout(function() {
-		    	$.mobile.changePage("#logon", { transition: "flip" });
+	        	if (!alreadyLoggedIn) {
+		    		$.mobile.changePage("#logon", { transition: "flip" });
+    		    }
             }, 10000);
 	    	$('#login').submit(function () {
 	    		$(this).hide();
