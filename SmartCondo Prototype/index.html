@@ -62,7 +62,7 @@
                 <div class="info-wrapper-right">
 					<div class="info">
                         <div class="info-data" id="ffnum"></div>
-						<div class="info-label" for="ffnum">Predio:</div>
+						<div class="info-label" for="ffnum">Prédio:</div>
                         <div class="clear"></div>
 					</div>
 					<div class="info">
@@ -83,7 +83,7 @@
 				<ul data-role="listview" id="myTripsView" data-inset="true" data-theme="d">
 					<li>
 						<a href="#myTrips" data-transition="slide">
-							<img class="ui-li-icon" src="images/icons/envelope_16x11.png" /> Inbox <span id="numberOfFlights"></span>
+							<img class="ui-li-icon" src="images/icons/envelope_16x11.png" /> Mensagens <span id="numberOfFlights"></span>
 						</a>
 					</li>
 				</ul>
@@ -153,7 +153,7 @@
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Trip Details</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="tripDetailList" data-inset="true" data-theme="d">
@@ -222,7 +222,7 @@
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Boarding Pass</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
-				<a data-role="button" href="#home" class="ui-btn-right">Home</a>
+				<a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="boardingPassData" data-inset="true" data-theme="d">
@@ -281,7 +281,7 @@
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Check In</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
 				<div class="ui-grid-a">
@@ -315,7 +315,7 @@
 		<!--myTrips page-->
 		<div id="myTripsOld" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
-				<h1>Inbox</h1>
+				<h1>Mensagens</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
 			</div>
 			<div data-role="content">
@@ -325,9 +325,9 @@
 		</div>
 		<div id="myTrips" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Inbox</h1>
+				<h1>Mensagens</h1>
                 <a data-role="button" href="#messageSend" class="ui-btn-left">Criar Email</a>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <ul data-role="listview" data-inset="true" data-divider-theme="a">
@@ -389,10 +389,10 @@
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Mensagem</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
-                <a href="#actions-popup" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-icon="gear">Acoes...</a>
+                <a href="#actions-popup" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-icon="gear">Ações...</a>
                 <br />
                 <div class="ui-corner-all" id="email">
                     <div class="ui-bar ui-bar-a">
@@ -409,17 +409,19 @@
             <div data-role="popup" id="actions-popup" data-theme="b">
                 <ul data-role="listview" dta-inset="true" style="min-width: 210px">
                     <li data-role="list-divider">Escolha:</li>
-                    <li><a href="#messageReply" class="ui-icon-refresh">Reply</a></li>
-                    <li><a href="#myTrips"  data-transition="slide" class="ui-icon-delete">Delete</a></li>
+                    <li><a href="#messageReply" class="ui-icon-refresh">Responder</a></li>
+                    <li><a href="#messageReply" class="ui-icon-refresh">Responder a Todos</a></li>
+                    <li><a href="#messageReply" class="ui-icon-right-arrow">Encaminhar</a></li>
+                    <li><a href="#myTrips"  data-transition="slide" class="ui-icon-delete">Deletar</a></li>
                 </ul>
             </div>
 		</div>
 
 		<div id="messageReply" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
-				<h1>Reply</h1>
+				<h1>Resposta</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <div class="ui-corner-all" id="emailReplyMessage">
@@ -430,7 +432,7 @@
                         <input type="text" name="emailSubject" id="emailSubject" value="" />
                         <label>Body:</label>
                         <textarea name="mailContent" id="mailContent" style="height: 150px;"></textarea>
-                        <button name="reply-btn" id="reply-btn" data-icon="forward">Reply</button>
+                        <button name="reply-btn" id="reply-btn" data-icon="forward">Responder</button>
                     </form>
                 </div>
 			</div>
@@ -440,7 +442,7 @@
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Mail</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <div class="ui-corner-all" id="emailSendMessage">
@@ -467,7 +469,7 @@
 		<div id="flightStatus" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Reservas</h1>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <ul data-role="listview" data-inset="true">
@@ -479,13 +481,82 @@
 			</div>
 		</div>
         
+		<div id="criarReserva" data-role="page">
+			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
+				<h1>Criar Reserva</h1>
+                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#" class="ui-btn-right" data-rel="back">Enviar</a>
+			</div>
+			<div data-role="content">
+                <form>
+                    <div data-role="fieldcontain">
+                        <label for="tipoReserva">Tipo:</label>
+                    	<input type="text" name="tipoReserva" id="tipoReserva" value="" placeholder="Tipo"/>
+                    	<label for="dataReserva">Data:</label>
+                    	<input type="date" name="dataReserva" id="dataReserva" value="" placeholder="Data"/>
+                        <label for="horarioReservaeDe">Horario:</label>
+                        <div class="row-fluid">
+                        	<select name="horarioReservaeDe" id="horarioReservaDe" class="selectpicker span1">
+                                <option></option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                            </select>
+                        	<select name="horarioReservaeDeMin" id="horarioReservaDeMin" class="selectpicker span1">
+                                <option></option>
+                                <option>00</option>
+                                <option>15</option>
+                                <option>30</option>
+                                <option>45</option>
+                            </select>
+                        </div>
+                        <label for="horarioReservaeAte">Até:</label>
+                        <div class="row-fluid">
+                        	<select name="horarioReservaeAte" id="horarioReservaAte" class="selectpicker span1">
+                                <option></option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                            </select>
+                        	<select name="horarioReservaeAteMin" id="horarioReservaAteMin" class="selectpicker span1">
+                                <option></option>
+                                <option>00</option>
+                                <option>15</option>
+                                <option>30</option>
+                                <option>45</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+			</div>
+		</div>
+
         <div id="calendarDetails" data-role="page">
 			<div data-role="header" data-position="fixed"  data-tap-toggle="false">
 				<h1>Reservas</h1>
                 <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
+                <a href="#criarReserva" data-role="button" data-icon="plus">Criar Reserva</a>
 				<div id="calendar"></div>
 			</div>
 		</div>
@@ -508,8 +579,6 @@
                      	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
                      	<label for="radio-choice-3">Serviço</label>
 
-                     	<input type="radio" name="radio-choice" id="radio-choice-4" value="choice-4"  />
-                     	<label for="radio-choice-4">Outro</label>
                     </fieldset>
                     <br />
                     <label>Tempo Estimado em Minutos:</label>
@@ -571,7 +640,7 @@
 		<div id="bagTrack" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>Portaria</h1>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" id="flightStatusView" data-inset="true" data-theme="d">
@@ -781,7 +850,7 @@
         <div id="programProgress" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>Cadastro</h1>
-                <a data-role="button" href="#home" class="ui-btn-right">Home</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <div data-role="tabs" id="tabs">
@@ -816,7 +885,7 @@
 		<div id="settings" data-role="page">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>Convênios</h1>
-                <a data-role="button" href="#" class="ui-btn-left" data-rel="back">Back</a>
+                <a data-role="button" href="#home" class="ui-btn-right">Início</a>
 			</div>
 			<div data-role="content">
                 <ul data-role="listview" data-inset="true" data-divider-theme="a">

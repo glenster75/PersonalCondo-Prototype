@@ -13,5 +13,5 @@
 .jqm-cal-wrapper .ui-btn-up-b {background:#fff;color: #707070;font-weight: 400;text-shadow:none;}
 .jqm-cal-wrapper .ui-btn-today {background: #fcf8e3;}
 .jqm-cal-wrapper .ui-btn-active {color: #ffffff;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);background-color: #faa732!important;background-image: -moz-linear-gradient(top, #fbb450, #f89406)!important;background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406))!important;background-image: -webkit-linear-gradient(top, #fbb450, #f89406)!important;background-image: -o-linear-gradient(top, #fbb450, #f89406)!important;background-image: linear-gradient(to bottom, #fbb450, #f89406)!important;background-repeat: repeat-x;}
-.jqm-cal-wrapper .hasEvent {color: #ffffff;text-shadow: 0 0 0 #ffffff;background: #89B814;}
+.jqm-cal-wrapper .hasEvent {color: #ffffff;text-shadow: 0 0 0 #ffffff;background: #89B814 !important;}
 .jqm-cal-wrapper .ui-listview {margin:15px 0!important;}
