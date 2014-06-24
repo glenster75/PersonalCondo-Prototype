@@ -16,7 +16,7 @@
 			dateFormatTitle : "dd MMMM, yyyy", // http://github.com/phstc/jquery-dateFormat
 			dateFormat : "dd MMMM, yyyy", 
 			version: "1.2.1",
-			months : ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julio", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+			months : ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
 			days : ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
 			weeksInMonth : 6,
 			startOfWeek : 1,

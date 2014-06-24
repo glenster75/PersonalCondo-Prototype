@@ -1,3 +1,11 @@
+.ui-header button, .ui-header a {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+input.ui-slider-input {
+	display : none !important;
+}        
+
 .clear {
     clear:both;
 }

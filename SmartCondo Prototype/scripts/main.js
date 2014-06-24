@@ -75,6 +75,15 @@ airlinesApp.prototype = function() {
 	    	$.mobile.changePage("#myTrips", { transition: "flip" });
             return false;
         });
+        $("#panicButton").on("click", function () {
+            navigator.notification.vibrate(3000);
+            navigator.notification.alert('Botão Pânico Enviada',
+                                     null,
+									 'Pânico', 
+									 'OK'     
+			);
+	    	$.mobile.changePage("#home", { transition: "flip" });
+        });
         $("#portariaNotify-btn").on("click", function () {
             navigator.notification.alert('Notificação para portaria enviada',
 									 function() {
@@ -91,7 +100,7 @@ airlinesApp.prototype = function() {
 									 'Portaria', 
 									 'OK'     
 			);
-	    	$.mobile.changePage("#bagTrack", { transition: "flip" });
+	    	$.mobile.changePage("#portaria", { transition: "flip" });
             return false;
         });
         
@@ -202,3 +211,38 @@ airlinesApp.prototype = function() {
         run:run,
     };
 }();
+
+$(function () {
+    $.mobile.defaultHomeScroll = 0;
+
+    /* This is for portaria slide show BEGIN */
+    /* http://www.w3schools.com/jquerymobile/jquerymobile_events_page.asp */
+    /* SET PARAMETERS */
+    var change_img_time     = 5000; 
+    var transition_speed    = 100;
+
+    var simple_slideshow    = $("#slideshow"),
+        listItems           = simple_slideshow.children('li'),
+        listLen             = listItems.length,
+        i                   = 0,
+
+        changeList = function () {
+
+            listItems.eq(i).fadeOut(transition_speed, function () {
+                i += 1;
+                if (i === listLen) {
+                    i = 0;
+                }
+                listItems.eq(i).fadeIn(transition_speed);
+            });
+
+        };
+
+    listItems.not(':first').hide();
+    setInterval(changeList, change_img_time);
+    /*
+        var refreshIntervalId = setInterval(fname, 10000);
+        clearInterval(refreshIntervalId);
+    */
+    /* This is for portaria slide show END */
+});
