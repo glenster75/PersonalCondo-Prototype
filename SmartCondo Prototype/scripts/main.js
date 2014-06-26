@@ -1,6 +1,7 @@
 // Wait for Apache Cordova to load
 document.addEventListener("deviceready", onDeviceReady, false);
 
+var previousRandom = -1;
 var alreadyLoggedIn = false;
 var deviceInfo = new function() {
 	this.model = "";
@@ -245,4 +246,28 @@ $(function () {
         clearInterval(refreshIntervalId);
     */
     /* This is for portaria slide show END */
+
+    setInterval(DoPropaganda, 5000);
 });
+
+function DoPropaganda() {
+    $(".propagandaImage").hide("slow");
+    var randomNumber = Math.floor((Math.random() * 10) + 1);
+    while (previousRandom === randomNumber) {
+    	randomNumber = Math.floor((Math.random() * 10) + 1);
+    }
+    previousRandom = randomNumber;
+    if (randomNumber > 7) {
+        $(".ui-footer").hide();
+	} else {
+        setTimeout(function () {
+            $(".propagandaImage").attr("src","images/ads/propaganda" + randomNumber + ".png");
+            $(".ui-footer").show();
+            $(".propagandaImage").show("slow");
+        }, 500);
+    }
+}
+
+	var airData = new airlinesData(2000);
+	var airlines = new airlinesApp();
+	airlines.run();
