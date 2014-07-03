@@ -280,6 +280,15 @@
                     <div data-role="fieldcontain">
                         <label for="tipoReserva">Tipo:</label>
                     	<input type="text" name="tipoReserva" id="tipoReserva" value="" placeholder="Tipo"/>
+                        <div data-role="fieldcontain">
+                            <label for="horarioReservaeDeMin">Data/Horario:</label>
+                            <input type="datetime-local" name="horarioReservaeDeMin" id="horarioReservaeDeMin" value=""  />
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="horarioReservaeAte">Até:</label>
+                            <input type="time" name="horarioReservaeAte" id="horarioReservaeAte" value=""  />
+                        </div>
+                        <!--
                     	<label for="dataReserva">Data:</label>
                     	<input type="date" name="dataReserva" id="dataReserva" value="" placeholder="Data"/>
                         <label for="horarioReservaeDe">Horario:</label>
@@ -340,6 +349,11 @@
                                 </select>
                             </div>	   
                         </fieldset>
+                        -->
+                        <div data-role="fieldcontain">
+                            <label for="numeroPessoasReserva">Numero de Pessoas:</label>
+                            <input type="number" name="numeroPessoasReserva" pattern="[0-9]*" id="numeroPessoasReserva" value="" placeholder="0">
+                        </div>
                     </div>
                 </form>
 			</div>
