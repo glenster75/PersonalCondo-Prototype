@@ -24,7 +24,7 @@
     "Portrait"
   ],
   "iOSStatusBarStyle": "BlackOpaque",
-  "BundleVersion": "0.9.8.14",
+  "BundleVersion": "0.9.8.15",
   "AndroidVersionCode": "1",
   "AndroidHardwareAcceleration": "true",
   "iOSDisplayName": "",
@@ -35,7 +35,7 @@
     "audio",
     "location"
   ],
-  "FrameworkVersion": "3.2.0",
+  "FrameworkVersion": "3.5.0",
   "CorePlugins": [
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
