@@ -224,6 +224,15 @@
 		}
 
 		$element.bind('change', function(event, begin) {
+            if (begin) {
+                var formattedMonth = ("0" + (begin.getMonth() + 1));
+                formattedMonth = formattedMonth.substring(formattedMonth.length - 2, formattedMonth.length);
+                var formattedDay = ("0" + begin.getDate());
+                formattedDay = formattedDay.substring(formattedDay.length - 2, formattedDay.length);
+                var formattedDate = begin.getFullYear() + "-" + formattedMonth + "-" + formattedDay + "T20:00";
+                $("#horarioReservaeDeMin").val(formattedDate);
+                $("#horarioReservaeAte").val("22:00")
+            }
 			var end = new Date(begin.getFullYear(), begin.getMonth(), begin.getDate() + 1, 0,0,0,0);
 			var found = false;
 			$listview.empty();
