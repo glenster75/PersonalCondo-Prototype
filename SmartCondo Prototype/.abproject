@@ -60,7 +60,7 @@
   "WP8ProductID": "{163ec050-1adf-4897-b5bf-e6b896dafa1b}",
   "WP8PublisherID": "{143367e4-3ee9-448a-b8d2-b5e1e126c03c}",
   "Author": "SmartImageSoft",
-  "Description": "Personal Condo",
+  "Description": "PersonalCondo",
   "WP8Requirements": [],
   "WP8Capabilities": [
     "ID_CAP_ISV_CAMERA"
