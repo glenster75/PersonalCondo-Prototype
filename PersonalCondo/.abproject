@@ -2,7 +2,7 @@
   "ProjectGuid": "163ec050-1adf-4897-b5bf-e6b896dafa1b",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "AppIdentifier": "com.smartimagesoft.PersonalCondo",
-  "ProjectName": "SmartCondo Prototype",
+  "ProjectName": "PersonalCondo",
   "IsRunnable": "true",
   "AndroidPermissions": [
     "android.permission.ACCESS_COARSE_LOCATION",
