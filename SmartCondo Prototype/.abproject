@@ -1,7 +1,7 @@
 {
   "ProjectGuid": "163ec050-1adf-4897-b5bf-e6b896dafa1b",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "AppIdentifier": "com.smartimagesoft.SmartCondoPrototype",
+  "AppIdentifier": "com.smartimagesoft.PersonalCondo",
   "ProjectName": "SmartCondo Prototype",
   "IsRunnable": "true",
   "AndroidPermissions": [
@@ -24,7 +24,7 @@
     "Portrait"
   ],
   "iOSStatusBarStyle": "Default",
-  "BundleVersion": "0.9.8.18",
+  "BundleVersion": "0.9.8.19",
   "AndroidVersionCode": "1",
   "AndroidHardwareAcceleration": "true",
   "iOSDisplayName": "",
@@ -51,7 +51,7 @@
     "com.telerik.feedback",
     "org.apache.cordova.vibration"
   ],
-  "DisplayName": "SmartCondo",
+  "DisplayName": "PersonalCondo",
   "WP8SupportedResolutions": [
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
@@ -60,7 +60,7 @@
   "WP8ProductID": "{163ec050-1adf-4897-b5bf-e6b896dafa1b}",
   "WP8PublisherID": "{143367e4-3ee9-448a-b8d2-b5e1e126c03c}",
   "Author": "SmartImageSoft",
-  "Description": "Smart Condo Prototype",
+  "Description": "Personal Condo",
   "WP8Requirements": [],
   "WP8Capabilities": [
     "ID_CAP_ISV_CAMERA"
