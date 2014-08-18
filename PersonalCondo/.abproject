@@ -23,13 +23,14 @@
   "DeviceOrientations": [
     "Portrait"
   ],
-  "iOSStatusBarStyle": "Default",
-  "BundleVersion": "0.9.8.20",
+  "iOSStatusBarStyle": "BlackOpaque",
+  "BundleVersion": "0.9.8.22",
   "AndroidVersionCode": "1",
   "AndroidHardwareAcceleration": "true",
   "iOSDisplayName": "",
   "iOSDeviceFamily": [
-    "1"
+    "1",
+    "2"
   ],
   "iOSBackgroundMode": [
     "audio",
