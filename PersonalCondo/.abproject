@@ -24,13 +24,12 @@
     "Portrait"
   ],
   "iOSStatusBarStyle": "BlackOpaque",
-  "BundleVersion": "0.9.8.22",
+  "BundleVersion": "0.9.8.23",
   "AndroidVersionCode": "1",
   "AndroidHardwareAcceleration": "true",
   "iOSDisplayName": "",
   "iOSDeviceFamily": [
-    "1",
-    "2"
+    "1"
   ],
   "iOSBackgroundMode": [
     "audio",
